@@ -1,4 +1,4 @@
-package testdata;
+package testdata.payment;
 
 public class Payment {
 }

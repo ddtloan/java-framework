@@ -1,4 +1,4 @@
-package testdata;
+package testdata.account;
 
 public class Account {
 }
