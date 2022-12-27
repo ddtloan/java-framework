@@ -92,7 +92,7 @@ public class AbstractPage {
         javascriptExecutor = (JavascriptExecutor) driver;
         javascriptExecutor.executeScript("arguments[0].click()", element);
 
-        waitExplicit = new WebDriverWait(driver, 30);
+        waitExplicit = new WebDriverWait(driver, Duration.ofSeconds(30));
         waitExplicit.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(allItemsInDropdown)));
         elements = driver.findElements(By.xpath(allItemsInDropdown));
 
@@ -263,25 +263,25 @@ public class AbstractPage {
     }
 
     public void waitForElementPresence(WebDriver driver, String locator) {
-        waitExplicit = new WebDriverWait(driver, 30);
+        waitExplicit = new WebDriverWait(driver, Duration.ofSeconds(30));
         byLocator = By.xpath(locator);
         waitExplicit.until(ExpectedConditions.presenceOfElementLocated(byLocator));
     }
 
     public void waitForElementVisible(WebDriver driver, String locator) {
-        waitExplicit = new WebDriverWait(driver, 30);
+        waitExplicit = new WebDriverWait(driver, Duration.ofSeconds(30));
         byLocator = By.xpath(locator);
         waitExplicit.until(ExpectedConditions.visibilityOfElementLocated(byLocator));
     }
 
     public void waitForElementClickAble(WebDriver driver, String locator) {
-        waitExplicit = new WebDriverWait(driver, 30);
+        waitExplicit = new WebDriverWait(driver, Duration.ofSeconds(30));
         byLocator = By.xpath(locator);
         waitExplicit.until(ExpectedConditions.elementToBeClickable(byLocator));
     }
 
     public void waitForElementInvisible(WebDriver driver, String locator) {
-        waitExplicit = new WebDriverWait(driver, 30);
+        waitExplicit = new WebDriverWait(driver, Duration.ofSeconds(30));
         byLocator = By.xpath(locator);
         waitExplicit.until(ExpectedConditions.invisibilityOfElementLocated(byLocator));
     }
